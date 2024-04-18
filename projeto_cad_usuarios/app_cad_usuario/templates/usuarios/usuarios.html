@@ -1,0 +1,39 @@
+{% extends "usuarios/base.html" %}
+
+{% block conteudo %}
+
+<br>
+<br>
+
+<div class = "container">
+    <table class = "table table-bordered table-striped">
+        <tr>
+            <th style="text-align: center">id</th>
+            <th style="text-align: center">nome</th>
+            <th style="text-align: center">idade</th>
+            <th style="text-align: center">email</th>
+        </tr>
+
+        {% for usuario in usuarios %}
+
+        <tr>
+
+            <td style="text-align: center">{{usuario.id_usuario}}</td>
+            <td style="text-align: center">{{usuario.nome}}</td>
+            <td style="text-align: center">{{usuario.idade}}</td>
+            <td style="text-align: center">{{usuario.email}}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+    <br>
+
+    <center><button class = "form-control-sm"><a style = "text-decoration : none; color : black" href = "{% url 'home' %}"><strong>CADASTRAR NOVO USUÁRIO</strong></button></center>
+
+</div>
+
+{% endblock %}
